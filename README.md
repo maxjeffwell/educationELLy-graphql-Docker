@@ -1,5 +1,10 @@
 # educationELLy GraphQL
 
+[![Server CI](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/ci.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/ci.yml)
+[![Server Docker](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/docker-build-push.yml)
+[![Client CI](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/ci.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/ci.yml)
+[![Client Docker](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/docker-build-push.yml)
+
 A full-stack application for managing English Language Learner (ELL) student educational data, built with React and Apollo GraphQL.
 
 ## Architecture
@@ -103,11 +108,23 @@ educationELLy-graphql/
 ├── nginx/                           # Nginx reverse proxy config
 │   └── nginx.conf
 │
+├── k8s/                             # Kubernetes manifests
+│   ├── namespace.yaml
+│   ├── configmap.yaml
+│   ├── secrets.yaml.example
+│   ├── server-deployment.yaml
+│   ├── server-service.yaml
+│   ├── client-deployment.yaml
+│   ├── client-service.yaml
+│   ├── ingress.yaml
+│   └── hpa.yaml
+│
 ├── docker-compose.yml               # Development Docker setup
 ├── docker-compose.prod.yml          # Production Docker setup
 ├── .env                             # Development environment variables
 ├── .env.production.example          # Production environment template
 ├── DOCKER.md                        # Docker deployment guide
+├── KUBERNETES.md                    # Kubernetes deployment guide
 └── README.md                        # This file
 ```
 
@@ -195,8 +212,9 @@ docker pull maxjeffwell/educationelly-graphql-client:latest
 
 ## Documentation
 
-- [Docker Deployment Guide](./DOCKER.md)
-- [CI/CD Pipeline Guide](./CICD.md)
+- [Docker Deployment Guide](./DOCKER.md) - Run with Docker Compose
+- [Kubernetes Deployment Guide](./KUBERNETES.md) - Deploy to K8s (Linode LKE)
+- [CI/CD Pipeline Guide](./CICD.md) - GitHub Actions setup
 - [Server Documentation](./educationELLy-graphql-server/README.md)
 - [Client Documentation](./educationELLy-graphql-client/README.md)
 - [Client Claude Guide](./educationELLy-graphql-client/CLAUDE.md)

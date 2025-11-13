@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: educationelly
+  labels:
+    app: educationelly-graphql
+    environment: production

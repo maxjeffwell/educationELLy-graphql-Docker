@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: educationelly-client
+  namespace: educationelly
+  labels:
+    app: educationelly-graphql
+    component: client
+spec:
+  type: ClusterIP
+  selector:
+    app: educationelly-graphql
+    component: client
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  sessionAffinity: None

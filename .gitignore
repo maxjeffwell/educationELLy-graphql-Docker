@@ -34,3 +34,6 @@ coverage/
 
 # Docker
 *.tar
+
+# Kubernetes secrets (contains sensitive data)
+k8s/secrets.yaml
