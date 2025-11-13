@@ -1,9 +1,16 @@
 # educationELLy GraphQL
 
-[![Server CI](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/ci.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/ci.yml)
-[![Server Docker](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/docker-build-push.yml)
-[![Client CI](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/ci.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/ci.yml)
-[![Client Docker](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/docker-build-push.yml)
+## Build Status
+
+**Server (Apollo GraphQL API)**
+- [![CI](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/ci.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/ci.yml) Continuous Integration
+- [![Docker](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-server/actions/workflows/docker-build-push.yml) Docker Build & Push
+
+**Client (React SPA)**
+- [![CI](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/ci.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/ci.yml) Continuous Integration
+- [![Docker](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/docker-build-push.yml/badge.svg)](https://github.com/maxjeffwell/educationELLy-graphql-client/actions/workflows/docker-build-push.yml) Docker Build & Push
+
+---
 
 A full-stack application for managing English Language Learner (ELL) student educational data, built with React and Apollo GraphQL.
 
