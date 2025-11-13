@@ -1,0 +1,6 @@
+[submodule "educationELLy-graphql-server"]
+	path = educationELLy-graphql-server
+	url = git@github.com:maxjeffwell/educationELLy-graphql-server.git
+[submodule "educationELLy-graphql-client"]
+	path = educationELLy-graphql-client
+	url = git@github.com:maxjeffwell/educationELLy-graphql-client.git
