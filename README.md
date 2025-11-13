@@ -173,9 +173,30 @@ npm test             # Run tests
 ### Client
 - `REACT_APP_API_BASE_URL`: GraphQL API endpoint
 
+## CI/CD
+
+The project includes automated CI/CD pipelines with GitHub Actions:
+
+- **Continuous Integration**: Automated testing, linting, and build verification
+- **Docker Hub**: Automatic image builds and publishing
+- **Security Scanning**: Trivy vulnerability scanning
+- **Multi-Platform**: Images built for linux/amd64 and linux/arm64
+
+### Docker Hub Images
+
+Pre-built images are available:
+- Server: `maxjeffwell/educationelly-graphql-server`
+- Client: `maxjeffwell/educationelly-graphql-client`
+
+```bash
+docker pull maxjeffwell/educationelly-graphql-server:latest
+docker pull maxjeffwell/educationelly-graphql-client:latest
+```
+
 ## Documentation
 
 - [Docker Deployment Guide](./DOCKER.md)
+- [CI/CD Pipeline Guide](./CICD.md)
 - [Server Documentation](./educationELLy-graphql-server/README.md)
 - [Client Documentation](./educationELLy-graphql-client/README.md)
 - [Client Claude Guide](./educationELLy-graphql-client/CLAUDE.md)

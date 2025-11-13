@@ -332,10 +332,48 @@ docker-compose -f docker-compose.prod.yml --env-file .env.production up -d
 - Enable MongoDB Atlas network access restrictions
 - Consider implementing rate limiting at the nginx level for production
 
+## CI/CD Integration
+
+This project includes automated CI/CD pipelines that:
+- Automatically build Docker images on every push to `master`/`main`
+- Push images to Docker Hub
+- Run security scans with Trivy
+- Support multi-platform builds (amd64, arm64)
+- Tag images with semantic versions
+
+### Quick Start with Docker Hub Images
+
+Instead of building locally, you can pull pre-built images:
+
+```bash
+# Pull latest images from Docker Hub
+docker pull maxjeffwell/educationelly-graphql-server:latest
+docker pull maxjeffwell/educationelly-graphql-client:latest
+
+# Run with docker-compose using Hub images
+docker-compose pull
+docker-compose up -d
+```
+
+### Available Images
+
+- **Server**: `maxjeffwell/educationelly-graphql-server`
+- **Client**: `maxjeffwell/educationelly-graphql-client`
+
+### For Complete CI/CD Documentation
+
+See [CICD.md](./CICD.md) for:
+- GitHub Actions workflows setup
+- Docker Hub configuration
+- GitHub Secrets setup
+- Security scanning details
+- Deployment strategies
+
 ## Next Steps
 
+- ✅ CI/CD pipeline configured
+- ✅ Docker Hub integration complete
 - Add Kubernetes manifests for Linode deployment
-- Set up CI/CD pipeline to build and push Docker images
 - Configure monitoring and logging (Prometheus, Grafana, ELK stack)
 - Implement automated backups for MongoDB
 - Add SSL/TLS termination at load balancer or ingress level
