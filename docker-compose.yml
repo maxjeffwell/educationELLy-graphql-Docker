@@ -2,10 +2,8 @@ version: '3.8'
 
 services:
   server:
-    build:
-      context: ./educationELLy-graphql-server
-      dockerfile: Dockerfile
-    container_name: educationelly-server
+    image: maxjeffwell/educationelly-graphql-server:latest
+    container_name: educationelly-graphql-server
     environment:
       - NODE_ENV=${NODE_ENV:-production}
       - PORT=8000
@@ -25,12 +23,8 @@ services:
       start_period: 40s
 
   client:
-    build:
-      context: .
-      dockerfile: ./educationELLy-graphql-client/Dockerfile
-      args:
-        - REACT_APP_API_BASE_URL=/graphql
-    container_name: educationelly-client
+    image: maxjeffwell/educationelly-graphql-client:latest
+    container_name: educationelly-graphql-client
     ports:
       - "80:80"
     depends_on:
@@ -39,7 +33,7 @@ services:
       - educationelly-network
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1/health"]
       interval: 30s
       timeout: 3s
       retries: 3
