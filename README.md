@@ -78,18 +78,15 @@ See [DOCKER.md](./DOCKER.md) for detailed Docker deployment instructions.
 
 ## Deployment
 
-### Current Deployments
+### Production (Kubernetes)
 
-- **Production Server**: https://educationelly-server-graphql-5b9748151d5a.herokuapp.com
-- **Production Client**: https://educationelly-client-graphql-176ac5044d94.herokuapp.com
+The application runs on a self-hosted **K3s cluster** managed via ArgoCD GitOps:
 
-Both applications are currently deployed on Heroku.
-
-### Deployment Options
-
-1. **Heroku** (Current): Uses buildpacks, separate deployments for client and server
-2. **Docker** (New): Containerized deployment with docker-compose
-3. **Kubernetes** (Planned): Future deployment to Linode Kubernetes Engine
+- **Live:** [educationelly-graphql.el-jefe.me](https://educationelly-graphql.el-jefe.me)
+- **Ingress:** Traefik with automatic TLS via cert-manager + Let's Encrypt
+- **Secrets:** Doppler + External Secrets Operator
+- **CI/CD:** GitHub Actions → Docker Hub → ArgoCD auto-sync
+- **Helm:** Deployed via shared `portfolio-common` library chart
 
 ## Project Structure
 
@@ -220,7 +217,7 @@ docker pull maxjeffwell/educationelly-graphql-client:latest
 ## Documentation
 
 - [Docker Deployment Guide](./DOCKER.md) - Run with Docker Compose
-- [Kubernetes Deployment Guide](./KUBERNETES.md) - Deploy to K8s (Linode LKE)
+- [Kubernetes Deployment Guide](./KUBERNETES.md) - Deploy to K8s
 - [CI/CD Pipeline Guide](./CICD.md) - GitHub Actions setup
 - [Server Documentation](./educationELLy-graphql-server/README.md)
 - [Client Documentation](./educationELLy-graphql-client/README.md)
@@ -253,8 +250,4 @@ The client includes a GitHub Actions workflow that runs on push/PR:
 
 ## License
 
-[Add your license information here]
-
-## Support
-
-[Add support/contact information here]
+GNU GPLv3
