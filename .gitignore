@@ -64,3 +64,6 @@ k8s/secrets.yaml
 
 # ArtiForge configuration
 .artiforge/
+
+# Serena MCP server tool state (per-developer; not shared)
+.serena/
